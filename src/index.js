@@ -4,6 +4,8 @@ import { blobToURL, urlToBlob, fromBlob, fromURL } from "image-resize-compress";
 import github from "./img/GitHub-Mark-32px.png";
 import "./styles.css";
 
+const getSize = (size) => (size / 1024).toFixed(3);
+
 function App() {
   const [uploadedFile, setUploadedFile] = useState();
   const [uploadedFileUrl, setUploadedFileUrl] = useState();
@@ -12,6 +14,7 @@ function App() {
 
   const [convertedFile, setConvertedFile] = useState();
   const [imageUrl, setImageUrl] = useState();
+  const [reduced, setReduced] = useState(null);
   const formRef = useRef();
 
   const renderDetails = (file) => (
@@ -24,7 +27,7 @@ function App() {
       )}
       {file.size && (
         <>
-          <span>Size: {`${(file.size / 1024).toFixed(3)}kb`}</span>
+          <span>Size: {`${getSize(file.size)}kb`}</span>
           <br />
         </>
       )}
@@ -37,11 +40,23 @@ function App() {
     </div>
   );
 
+  const renderReduced = () =>
+    reduced > 0 ? (
+      <span className="reduced">Reduced: {`${reduced}kb`}</span>
+    ) : (
+      <span className="increased">
+        Increased: {`${reduced * -1}kb`}
+        <br />
+        Try changing image format
+      </span>
+    );
   const uploadURL = (e) => {
     e.preventDefault();
+    let size;
     setUploadedFileUrl(imgUrl);
     urlToBlob(imgUrl).then((file) => {
       setUploadedFile(file);
+      size = file.size;
     });
 
     const { quality, width, height, format } = formRef.current;
@@ -50,6 +65,7 @@ function App() {
       .then((file) => {
         blobToURL(file).then((url) => setImageUrl(url));
         setConvertedFile(file);
+        setReduced(getSize(size - file.size));
       })
       .catch((err) => alert(err));
   };
@@ -66,6 +82,7 @@ function App() {
     ).then((file) => {
       blobToURL(file).then((url) => setImageUrl(url));
       setConvertedFile(file);
+      setReduced(getSize(uploadedFile.size - file.size));
     });
   };
 
@@ -180,14 +197,7 @@ function App() {
             <h2>After:</h2>
             <img src={imageUrl} alt=""></img>
             <br />
-            {uploadedFile && (
-              <span className="reduced">
-                Reduced:{" "}
-                {`${((uploadedFile.size - convertedFile.size) / 1024).toFixed(
-                  3
-                )}kb`}
-              </span>
-            )}
+            {uploadedFile && renderReduced()}
             <br />
             {renderDetails(convertedFile)}
             <br />

@@ -81,6 +81,7 @@ a {
   display: inline-block;
   margin: 0.5rem;
 }
+
 .details:last-of-type {
   margin: 0;
 }
@@ -89,6 +90,12 @@ a {
   font-weight: bold;
   display: inline-block;
   color: green;
+}
+
+.increased {
+  font-weight: bold;
+  display: inline-block;
+  color: red;
 }
 
 .preview {
