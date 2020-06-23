@@ -37,7 +37,8 @@ function App() {
     </div>
   );
 
-  const uploadURL = () => {
+  const uploadURL = (e) => {
+    e.preventDefault();
     setUploadedFileUrl(imgUrl);
     urlToBlob(imgUrl).then((file) => {
       setUploadedFile(file);
@@ -139,27 +140,24 @@ function App() {
         </label>
         <br />
         <input type="file" onChange={fileChangedHandler} />
-        <button
-          type="submit"
-          name="upload_button"
-          disabled={!uploadedFile}
-          value="file"
-        >
+        <button type="submit" disabled={!uploadedFile}>
           Upload
         </button>
       </form>
-      <label>or URL:</label>
-      <br />
-      <input
-        className="url-input"
-        value={imgUrl}
-        onChange={(e) => setImgUrl(e.target.value)}
-        type="text"
-        placeholder="Enter the image url"
-      />
-      <button type="button" disabled={!imgUrl} onClick={uploadURL}>
-        From URL
-      </button>
+      <form onSubmit={uploadURL}>
+        <label>or URL:</label>
+        <br />
+        <input
+          className="url-input"
+          value={imgUrl}
+          onChange={(e) => setImgUrl(e.target.value)}
+          type="text"
+          placeholder="Enter the image url"
+        />
+        <button type="submit" disabled={!imgUrl}>
+          From URL
+        </button>
+      </form>
       <br />
       <div className="preview">
         {uploadedFileUrl && uploadedFile && (
