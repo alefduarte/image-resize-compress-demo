@@ -138,11 +138,11 @@ function App() {
       <label>or URL:</label>
       <br />
       <input
+        className="url-input"
         value={imgUrl}
         onChange={(e) => setImgUrl(e.target.value)}
         type="text"
         placeholder="Enter the image url"
-        style={{ width: 500 }}
       />
 
       <button type="button" disabled={!imgUrl} onClick={uploadURL}>

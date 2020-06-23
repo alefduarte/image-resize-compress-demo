@@ -6,28 +6,27 @@ input,
 select {
   padding: 0.5rem;
   font-size: 16px;
-  width: 100px;
+  width: 100%;
   display: inline-block;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
 
 input[type="file"] {
-  width: 500px;
-}
-input[type="file"].button {
-  font-size: 17px;
-  font-weight: 500;
+  width: 100%;
+  margin: 0.5rem;
 }
 
 label {
   font-weight: bold;
   display: inline-block;
   margin: 0.5rem;
+  font-size: 1.1rem;
+  width: 100%;
 }
 
-.app {
-  margin: 2rem;
+img {
+  max-width: 100%;
 }
 
 button {
@@ -44,7 +43,7 @@ button {
   cursor: pointer;
   outline: none;
   -webkit-appearance: none;
-  margin: 1rem;
+  margin: 1rem 0.5rem;
 }
 
 button:disabled {
@@ -60,6 +59,14 @@ button.outline {
 
 a {
   text-decoration: none;
+}
+
+.app {
+  margin: 1rem;
+}
+
+.url-input {
+  width: 100%;
 }
 
 .github-icon {
@@ -84,10 +91,41 @@ a {
 }
 
 .preview {
-  display: inline-flex;
+  display: block;
 }
 
 .image {
   display: block;
   margin: 0 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  input[type="file"] {
+    width: 500px;
+  }
+
+  input,
+  select {
+    width: 100px;
+  }
+
+  button {
+    margin: 1rem;
+  }
+
+  label {
+    width: auto;
+  }
+
+  .url-input {
+    width: 500px;
+  }
+
+  .app {
+    margin: 2rem;
+  }
+
+  .preview {
+    display: inline-flex;
+  }
 }
