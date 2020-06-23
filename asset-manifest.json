@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/image-resize-compress-demo/static/css/main.3a1e0923.chunk.css",
+    "main.js": "/image-resize-compress-demo/static/js/main.e1fbdab7.chunk.js",
+    "main.js.map": "/image-resize-compress-demo/static/js/main.e1fbdab7.chunk.js.map",
+    "runtime-main.js": "/image-resize-compress-demo/static/js/runtime-main.f6345295.js",
+    "runtime-main.js.map": "/image-resize-compress-demo/static/js/runtime-main.f6345295.js.map",
+    "static/js/2.a9ed2d57.chunk.js": "/image-resize-compress-demo/static/js/2.a9ed2d57.chunk.js",
+    "static/js/2.a9ed2d57.chunk.js.map": "/image-resize-compress-demo/static/js/2.a9ed2d57.chunk.js.map",
+    "index.html": "/image-resize-compress-demo/index.html",
+    "precache-manifest.399e23dabb56c97659e05e7148a4c086.js": "/image-resize-compress-demo/precache-manifest.399e23dabb56c97659e05e7148a4c086.js",
+    "service-worker.js": "/image-resize-compress-demo/service-worker.js",
+    "static/css/main.3a1e0923.chunk.css.map": "/image-resize-compress-demo/static/css/main.3a1e0923.chunk.css.map",
+    "static/js/2.a9ed2d57.chunk.js.LICENSE.txt": "/image-resize-compress-demo/static/js/2.a9ed2d57.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f6345295.js",
+    "static/js/2.a9ed2d57.chunk.js",
+    "static/css/main.3a1e0923.chunk.css",
+    "static/js/main.e1fbdab7.chunk.js"
+  ]
+}
