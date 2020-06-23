@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eeb0c03c7dc0c3b7a9daef5a6d092dfe",
+    "revision": "b2c9e1a25ebf39daa126b519afe35617",
     "url": "/image-resize-compress-demo/index.html"
   },
   {
