@@ -84,7 +84,7 @@ function App() {
 
   return (
     <div className="app">
-      <h2>
+      <h1>
         <a
           href="https://www.npmjs.com/package/image-resize-compress"
           target="_blank"
@@ -95,7 +95,20 @@ function App() {
         <a href="https://github.com/alefduarte/image-resize-compress">
           <img className="github-icon" src={github} alt="github" />
         </a>
-      </h2>
+      </h1>
+      <h3>
+        Sample page for demonstrating{" "}
+        <code className="tag">image-resize-compress</code> package.
+        <br />
+        You may check more about this package{" "}
+        <a
+          href="https://www.npmjs.com/package/image-resize-compress"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          here
+        </a>
+      </h3>
       <form ref={formRef} onSubmit={handleSubmit}>
         <label>
           Quality:
@@ -144,7 +157,6 @@ function App() {
         type="text"
         placeholder="Enter the image url"
       />
-
       <button type="button" disabled={!imgUrl} onClick={uploadURL}>
         From URL
       </button>

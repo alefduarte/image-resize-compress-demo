@@ -99,6 +99,13 @@ a {
   margin: 0 1rem;
 }
 
+.tag {
+  color: crimson;
+  background-color: #f1f1f1;
+  padding: 0px 4px;
+  font-size: 110%;
+}
+
 @media only screen and (min-width: 768px) {
   input[type="file"] {
     width: 500px;
