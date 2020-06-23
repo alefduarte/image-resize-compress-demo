@@ -112,7 +112,11 @@ function App() {
         >
           Image Resizer, Compressor and Converter
         </a>
-        <a href="https://github.com/alefduarte/image-resize-compress">
+        <a
+          href="https://github.com/alefduarte/image-resize-compress"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img className="github-icon" src={github} alt="github" />
         </a>
       </h1>
