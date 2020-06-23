@@ -41,13 +41,13 @@ function App() {
   );
 
   const renderReduced = () =>
-    reduced > 0 ? (
+    reduced >= 0 ? (
       <span className="reduced">Reduced: {`${reduced}kb`}</span>
     ) : (
       <span className="increased">
         Increased: {`${reduced * -1}kb`}
         <br />
-        Try changing image format
+        Try changing image format or quality
       </span>
     );
   const uploadURL = (e) => {
@@ -65,7 +65,9 @@ function App() {
       .then((file) => {
         blobToURL(file).then((url) => setImageUrl(url));
         setConvertedFile(file);
-        setReduced(getSize(size - file.size));
+        setTimeout(() => {
+          setReduced(getSize(size - file.size));
+        }, 100);
       })
       .catch((err) => alert(err));
   };
